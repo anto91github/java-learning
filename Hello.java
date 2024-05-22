@@ -1,34 +1,14 @@
-class A
+@FunctionalInterface
+interface A
 {
-    public A(){
-        super();
-        System.out.println(" this in A");
-    }
-
-    public A(int a){
-        super();
-        System.out.println(" this in A int " + a);
-    }
+    int add(int i, int j) ;
 }
 
-class B extends A
-{
-    public B(){
-        super();
-        System.out.println(" this is B");
-    }
-
-    public B(int b){
-        this(); // menjalankan constructor default pada class yg sama
-        System.out.println(" this is B int");
-    }
-}
 public class Hello 
 {
     public static void main(String a[])
     {
-        B obj = new B(5);
+      A obj = (i, j)->  i+j; // i+j disini sama dengan return i+j
+      obj.add(5, 8 );
     }
 }
-
-
